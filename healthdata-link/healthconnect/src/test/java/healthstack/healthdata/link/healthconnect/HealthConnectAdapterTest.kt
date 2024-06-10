@@ -144,7 +144,7 @@ class HealthConnectAdapterTest {
             null,
             endTime,
             null,
-            stage = "sleeping"
+            stage = SleepStageRecord.STAGE_TYPE_SLEEPING
         )
 
         runTest {
@@ -266,8 +266,8 @@ class HealthConnectAdapterTest {
         runTest {
             val permissions = healthDataTypeStrings.map {
                 listOf(
-                    HealthPermission.createReadPermission(HealthConnectUtils.nameToRecord(it)),
-                    HealthPermission.createWritePermission(HealthConnectUtils.nameToRecord(it))
+                    HealthPermission.getReadPermission(HealthConnectUtils.nameToRecord(it)),
+                    HealthPermission.getWritePermission(HealthConnectUtils.nameToRecord(it))
                 )
             }
                 .flatten()
@@ -278,7 +278,7 @@ class HealthConnectAdapterTest {
                 healthConnectClientStub.permissionController
             ).thenReturn(permissionController)
 
-            `when`(permissionController.getGrantedPermissions(permissions))
+            `when`(permissionController.getGrantedPermissions())
                 .thenReturn(permissions)
 
             assertTrue(healthConnectAdapter.hasAllPermissions())
