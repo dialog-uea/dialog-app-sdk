@@ -71,6 +71,6 @@ fun BottomBarNavigationPreview() =
         listOf(
             BottomNavItem("Home", Icons.Default.Home),
             BottomNavItem("Insights", Icons.Default.InsertChart),
-            BottomNavItem("Education", Icons.Default.MenuBook)
+            BottomNavItem("Educação", Icons.Default.MenuBook)
         )
     )

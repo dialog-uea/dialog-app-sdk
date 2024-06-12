@@ -87,14 +87,14 @@ fun Home(
         backgroundColor = AppTheme.colors.background,
         topBar = {
             if (state.value == AppStage.Home.title) TopBarWithDropDown(
-                "Keep it going, ${firebaseAuth.currentUser?.displayName}!",
+                "Continue assim, ${firebaseAuth.currentUser?.displayName}!",
                 AppTheme.typography.headline3,
                 AppTheme.colors.onSurface,
                 listOf(
-                    DropdownMenuItemData("Profile", Icons.Default.Person) { changeNavigation(Profile) },
-                    DropdownMenuItemData("Settings", Icons.Default.Settings) { changeNavigation(Settings) },
+                    DropdownMenuItemData("Perfil", Icons.Default.Person) { changeNavigation(Profile) },
+                    DropdownMenuItemData("Configurações", Icons.Default.Settings) { changeNavigation(Settings) },
                     DropdownMenuItemData(
-                        "Study Information",
+                        "Informação de estudo",
                         Icons.Default.Info
                     ) { changeNavigation(StudyInformation) },
                 )
@@ -176,7 +176,7 @@ private fun DailyTaskView(
         Spacer(Modifier.height(40.dp))
 
         HomeTaskCard(
-            "Upcoming Tasks",
+                "Próximas tarefas",
             viewModel.activeTasks.collectAsState().value,
             { viewModel.syncTasks() }
         ) {
@@ -185,12 +185,12 @@ private fun DailyTaskView(
         }
         Spacer(Modifier.height(32.dp))
         HomeTaskCard(
-            "Today",
+            "Hoje",
             viewModel.todayTasks.collectAsState().value
         )
         Spacer(Modifier.height(32.dp))
         HomeTaskCard(
-            "Completed Tasks",
+            "Tarefas concluídas",
             viewModel.completedTasks.collectAsState().value
         )
         Spacer(Modifier.height(60.dp))

@@ -11,23 +11,26 @@
     <string name="licenses_url">https://s-healthstack.io</string>
     <!-- my profile -->
     <string-array name="profile_genders">
-        <item>Female</item>
-        <item>Male</item>
+        <item>Feminino</item>
+        <item>Masculino</item>
     </string-array>
     <string-array name="profile_countries">
-        <item>United States</item>
-        <item>United Kingdom</item>
-        <item>Ukraine</item>
-        <item>Vietnam</item>
-        <item>Virgin Islands (US)</item>
-        <item>Korea</item>
+        <item>Brasil</item>
+        <item>Estados Unidos</item>
+        <item>Reino Unido</item>
+        <item>Ucrânia</item>
+        <item>Vietnã</item>
+        <item>Ilhas Virgens (EUA)</item>
+        <item>Coreia</item>
     </string-array>
     <string-array name="profile_races">
-        <item>American Indian or Alaskan Native</item>
-        <item>Asian</item>
-        <item>Black or African American</item>
-        <item>Native Hawaiian</item>
-        <item>White</item>
+        <item>Preto ou Afro-americano</item>
+        <item>Branco</item>
+        <item>Pardo</item>
+        <item>Asiático</item>
+        <item>Indígena Americano ou Nativo do Alasca</item>
+        <item>Nativo Havaiano</item>
+
     </string-array>
     <!-- This field will be disabled in profile view -->
     <string-array name="from_eligibility">
@@ -44,19 +47,26 @@
         <item>country</item>
         <item>dob</item>
     </string-array>
-    <string name="id_title">Participant ID</string>
+    <string name="id_title">ID do Participante</string>
     <string name="email_title">Email</string>
-    <string name="race_title">Race</string>
-    <string name="race_placeholder">Select Race</string>
-    <string name="country_title">Country</string>
-    <string name="country_placeholder">Select a country</string>
-    <string name="dob_title">Date of Birth</string>
-    <string name="dob_placeholder">MM / DD / YYYY</string>
-    <string name="age_title">Age</string>
-    <string name="age_placeholder">Select Age</string>
-    <string name="gender_title">Biological Gender</string>
-    <string name="gender_placeholder">Select Gender</string>
+    <string name="race_title">Raça</string>
+    <string name="race_placeholder">Selecione raça</string>
+    <string name="country_title">País</string>
+    <string name="country_placeholder">Selecione país</string>
+    <string name="dob_title">Data de Nascimento</string>
+    <string name="dob_placeholder">DD / MM / YYYY</string>
+    <string name="age_title">Idade</string>
+    <string name="age_placeholder">Selecione Idade</string>
+    <string name="gender_title">Gênero biológico</string>
+    <string name="gender_placeholder">Selecione Gênero</string>
+    <string name="next">Próximo</string>
+    <string name="previous">Anterior</string>
+    <string name="complete">Finalizar</string>
+    <string name="eligibility_intro_button_text">Checar elegibilidade</string>
+    <string name="join_study">Participar do estudo</string>
     <!-- backend integration -->
-    <string name="research_platform_endpoint">http://dialog.uea.edu.br:38080</string>
+    <string name="research_platform_endpoint">http://10.10.53.68:8080</string>
     <string name="research_project_id">1</string>
+    <string name="wed">1</string>
+
 </resources>

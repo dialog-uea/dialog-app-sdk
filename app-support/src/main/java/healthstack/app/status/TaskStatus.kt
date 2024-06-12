@@ -8,5 +8,5 @@ object TaskStatus : StatusDataType() {
     // FIXME currently, not used
     override suspend fun getLatestStatus(): Any? = null
 
-    override fun getUnitString(): String = "Tasks\nRemaining"
+    override fun getUnitString(): String = "Tarefas\nRestantes"
 }

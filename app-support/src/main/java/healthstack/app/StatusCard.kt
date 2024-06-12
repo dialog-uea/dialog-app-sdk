@@ -57,7 +57,7 @@ fun TaskStatusCard(
     val upcomingTaskState = viewModel.activeTasks.collectAsState()
 
     TaskStatus(
-        dataType.getIcon(), "${upcomingTaskState.value.tasks.size}", "TASKS\nREMAINING"
+        dataType.getIcon(), "${upcomingTaskState.value.tasks.size}", "TAREFAS\nRESTANTES"
     )
 }
 

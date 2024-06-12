@@ -97,7 +97,7 @@
     <string name="dob_title">Date of Birth</string>
     <string name="dob_placeholder">MM / DD / YYYY</string>
     <string name="age_title">Age</string>
-    <string name="age_placeholder">Select Age</string>
+    <string name="age_placeholder">Selecione Idade</string>
     <string name="gender_title">Biological Gender</string>
     <string name="gender_placeholder">Select Gender</string>
     <!-- localization -->

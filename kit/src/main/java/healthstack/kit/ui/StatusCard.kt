@@ -157,7 +157,7 @@ fun HealthDataStatusRow(@DrawableRes drawableId: Int, value: String, unit: Strin
 @Preview(showBackground = true)
 @Composable
 fun TaskStatusCardPreview() =
-    TaskStatus(R.drawable.ic_task, "5", "TASKS\nREMAINING")
+    TaskStatus(R.drawable.ic_task, "5", "TAREFAS\nRESTANTES")
 
 @PreviewGenerated
 @Preview(showBackground = true)
@@ -178,7 +178,7 @@ fun HealthDataStatusCardPreview() =
                 )
         ) {
             HealthDataStatusRow(R.drawable.ic_heart, "87", "BPM")
-            HealthDataStatusRow(R.drawable.ic_step, "8,735", "Steps")
+            HealthDataStatusRow(R.drawable.ic_step, "8,735", "Passos")
         }
     }
 

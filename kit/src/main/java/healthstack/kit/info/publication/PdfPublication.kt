@@ -64,7 +64,7 @@ class PdfPublication(
 
             Scaffold(
                 topBar = {
-                    TopBar("Education") {
+                    TopBar("Educação") {
                         onClick(null)
                     }
                 },

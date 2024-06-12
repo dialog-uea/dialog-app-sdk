@@ -88,7 +88,7 @@ class SettingsView(
 
         Scaffold(
             topBar = {
-                TopBar("Settings") {
+                TopBar("Configurações") {
                     onClickBack()
                 }
             }
@@ -100,7 +100,7 @@ class SettingsView(
                     .verticalScroll(scrollState),
             ) {
                 Text(
-                    text = "Reminders",
+                    text = "Lembretes",
                     style = AppTheme.typography.title2,
                     color = AppTheme.colors.onSurface,
                     textAlign = TextAlign.Left,
@@ -108,7 +108,7 @@ class SettingsView(
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
-                    text = "Select the time for assessment reminders.",
+                    text = "Selecione o horário para lembretes de avaliação.",
                     style = AppTheme.typography.body2,
                     color = AppTheme.colors.onSurface.copy(0.6F),
                     textAlign = TextAlign.Left,
@@ -124,7 +124,7 @@ class SettingsView(
                 ) {
                     Column {
                         Text(
-                            text = "1st Time",
+                            text = "1° Vez",
                             style = AppTheme.typography.body1,
                             color = AppTheme.colors.onBackground,
                         )
@@ -154,22 +154,22 @@ class SettingsView(
                 Spacer(Modifier.height(65.dp))
                 AlertPopup(
                     "Logout",
-                    "Close this App?",
-                    "Are you sure you want to logout?",
+                    "Fechar esse App?",
+                    "Você tem certeza que quer fazer logout?",
                     "Logout",
-                    "Cancel",
+                    "Cancelar",
                 ) {
                     Firebase.auth.signOut()
                     initialize()
                 }
                 Spacer(Modifier.height(30.dp))
                 AlertPopup(
-                    "Withdraw from Study",
-                    "Withdraw from Study?",
-                    "Withdrawing from the study will permanently delete your account. " +
-                        "Are you sure you would like to proceed?",
-                    "Withdraw",
-                    "Cancel",
+                    "Retirar-se do Estudo",
+                    "Retirar-se do Estudo?",
+                    "Retirar-se do estudo vai deletar permanentemente sua conta. " +
+                        "Tem certeza que gostaria de continuar?",
+                    "Retirar-se",
+                    "Cancelar",
                 )
             }
         }
@@ -178,7 +178,7 @@ class SettingsView(
 
 @Composable
 private fun ReminderSwitch(
-    description: String = "Select the way to receive your reminders:",
+    description: String = "Selecione a forma de receber seus lembretes:",
     initialState: Boolean,
     changeState: (Boolean) -> Unit,
 ) {

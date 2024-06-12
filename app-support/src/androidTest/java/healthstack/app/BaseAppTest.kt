@@ -175,7 +175,7 @@ class BaseAppTest {
         rule.onNodeWithText(LocalDate.now().dayOfMonth.toString())
             .assertExists()
 
-        rule.onNodeWithText("Education")
+        rule.onNodeWithText("Educação")
             .assertExists()
             .performClick()
     }

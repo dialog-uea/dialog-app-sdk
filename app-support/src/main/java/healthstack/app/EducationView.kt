@@ -44,7 +44,7 @@ class EducationView(
                     TopAppBar(
                         title = {
                             Text(
-                                text = "Education",
+                                text = "Educação",
                                 style = AppTheme.typography.headline3,
                                 color = AppTheme.colors.onBackground,
                                 modifier = Modifier.padding(start = 20.dp)
@@ -60,7 +60,7 @@ class EducationView(
                             BottomNavItem("Home", Icons.Default.Home) {
                                 changeNavigation(AppStage.Home)
                             },
-                            BottomNavItem("Education", Icons.Default.MenuBook) {
+                            BottomNavItem("Educação", Icons.Default.MenuBook) {
                                 changeNavigation(AppStage.Education)
                             }
                         ),

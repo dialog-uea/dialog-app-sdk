@@ -6,12 +6,12 @@ package healthstack.app.pref
  * @param title The title of the stage.
  */
 enum class AppStage(val title: String) {
-    Onboarding("Onboarding"),
-    SignUp("Sign Up"),
+    Onboarding("Integração"),
+    SignUp("Inscrever-se"),
     Home("Home"),
-    Profile("Profile"),
-    StudyInformation("Study Information"),
-    Settings("Settings"),
+    Profile("Perfil"),
+    StudyInformation("Informação do estudo"),
+    Settings("Configurações"),
     Insights("Insights"),
-    Education("Education");
+    Education("Educação");
 }

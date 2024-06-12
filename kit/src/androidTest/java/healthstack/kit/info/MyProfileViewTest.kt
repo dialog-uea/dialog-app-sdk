@@ -35,7 +35,7 @@ class MyProfileViewTest {
             }
         }
 
-        rule.onNodeWithText("Profile")
+        rule.onNodeWithText("Perfil")
             .assertExists()
 
         rule.onNodeWithContentDescription("back button icon")

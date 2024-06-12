@@ -63,7 +63,7 @@ class SignUpView : View<SignUpModel>() {
 
         Scaffold(
             topBar = {
-                TopBar(title = "Register") {
+                TopBar(title = "Registro") {
                     callbackCollection.prev()
                 }
             },
@@ -105,7 +105,7 @@ class SignUpView : View<SignUpModel>() {
         @StringRes failedToSignInMessage: Int,
     ) = AuthCallback(
         onSuccess = {
-            ViewUtil.showToastMessage(context, "Hello, ${auth.currentUser?.displayName}!")
+            ViewUtil.showToastMessage(context, "Olá, ${auth.currentUser?.displayName}!")
             callbackCollection.next()
         },
         onFailure = {
@@ -181,9 +181,9 @@ fun SignUpViewPreview() =
     SignUpView().Render(
         SignUpModel(
             "id",
-            "Register",
+            "Registro",
             listOf(Basic, Google),
-            "Thanks for joining the study! Now please create an account to keep track of your data and keep it safe.",
+            "Obrigado por participar do estudo! Agora, por favor, crie uma conta para acompanhar seus dados e mantê-los seguros.",
         ),
         CallbackCollection(),
         null

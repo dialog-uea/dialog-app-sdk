@@ -44,7 +44,7 @@ class TextPublication(
 
         Scaffold(
             topBar = {
-                TopBar("Education") {
+                TopBar("Educação") {
                     onClick(null)
                 }
             }

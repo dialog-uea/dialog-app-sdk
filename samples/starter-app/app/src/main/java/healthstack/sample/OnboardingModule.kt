@@ -95,7 +95,7 @@ object OnboardingModule {
             "intro-step",
             "Intro-Step",
             intro(context),
-            IntroView("Get Started"),
+            IntroView("Iniciar"),
         )
 
     @Singleton
@@ -112,7 +112,7 @@ object OnboardingModule {
     @Singleton
     @Provides
     fun provideEligibilityCheckerStep(@ApplicationContext context: Context): EligibilityCheckerStep =
-        EligibilityCheckerStep.Builder("Eligibility")
+        EligibilityCheckerStep.Builder("Elegibilidade")
             .addQuestions(eligibilityQuestions).build()
 
     @Singleton
@@ -143,38 +143,40 @@ object OnboardingModule {
         drawableId = drawable.sample_image_alpha4,
         logoDrawableId = drawable.ic_launcher,
         summaries = listOf(
-            drawable.ic_watch to "Wear your\nwatch",
-            drawable.ic_alert to "10 min\na day",
-            drawable.ic_home_task to "2 surveys\na week"
+            drawable.ic_watch to "Use seu\nrelógio",
+            drawable.ic_alert to "10 min\npor dia",
+            drawable.ic_home_task to "2 pesquisas\npor semana"
         ),
         sections = listOf(
             IntroSection(
-                "Overview",
-                "CardioFlow is a study developed by the University of California, San Francisco.\n\n" +
-                    "Through this study, we identify and " +
-                    "measure the data of your vital signs and symptom reports.\n\n" +
-                    "With your help, we could test our algorithms and " +
-                    "develop technology that contributes to preventing cardiovascular diseases in the U.S.",
-            ),
+                "Visão Geral",
+
+                "CardioFlow é um estudo desenvolvido pela Universidade da Califórnia, São Francisco." +
+                    "Por meio deste estudo, identificamos e " +
+                    "medimos os dados de seus sinais vitais e relatórios de sintomas.\n\n" +
+                    "Com sua ajuda, poderíamos testar nossos algoritmos e " +
+                    "desenvolver tecnologia que contribui para a prevenção doenças cardiovasculares nos E.U.A.",
+
+                ),
             IntroSection(
-                "How to participate",
-                "Wear the watch as much as possible and take active measurements 3 times a day when notified."
+                "Como participar",
+                "Use o relógio o máximo possível e faça medições ativas 3 vezes ao dia quando notificado."
             )
         )
     )
 
     private fun eligibilityIntro(@ApplicationContext context: Context) = EligibilityIntroModel(
         id = "eligibility",
-        title = "Eligibility",
-        description = "To begin with, we will ask a few questions " +
-            "to make sure that you are eligible to join this study.",
+        title = "Elegibilidade",
+        description = "Para começar, faremos algumas perguntas " +
+            "para garantir que você é elegível para participar deste estudo.",
         conditions = eligibilitySections,
         viewType = Card
     )
 
     private fun eligibilityResult(@ApplicationContext context: Context) = EligibilityResultModel(
         id = "eligibility",
-        title = "Eligibility",
+        title = "Elegibilidade",
         successModel = eligibilitySuccessMessage,
         failModel = eligibilityFailMessage,
     )
@@ -183,13 +185,13 @@ object OnboardingModule {
         @ApplicationContext context: Context,
     ) = ConsentTextModel(
         id = "consent",
-        title = "Informed Consent",
+        title = "Consentimento Informado",
         subTitle = "",
-        description = "Read the Terms of Service and Privacy Policy here.",
+        description = "Leia os Termos de Serviço e Política de Privacidade aqui.",
         checkBoxTexts = listOf(
-            "I have read all the information above and I agree to join the study.",
-            "I agree to share my data with Samsung.",
-            "I agree to share my data with the research assistants in the study."
+            "Li toda a informação acima e concordo em me juntar ao estudo.",
+            "Concordo em compartilhar meus dados com a Samsung.",
+            "Concordo em compartilhar meus dados com os assistentes de pesquisa do estudo."
         )
     )
 
@@ -197,73 +199,73 @@ object OnboardingModule {
         id = "sign-up-model",
         title = "CardioFlow",
         listOf(Google),
-        description = "Thanks for joining the study!\n" +
-            "Now please create an account to keep track\n" +
-            "of your data and keep it safe.",
+        description = "Obrigado por participar do estudo!\n\n" +
+            "Agora, por favor, crie uma conta para acompanhar" +
+            "seus dados e mantê-los seguros.",
         drawableId = drawable.ic_launcher
     )
 
     private fun registrationCompleted() =
         RegistrationCompletedModel(
             id = "registration-completed-model",
-            title = "You are done!",
-            buttonText = "Continue",
-            description = "Congratulations! Everything is all set for you. " +
-                "Now please tap on the button below to start your CardioFlow journey!",
+            title = "Você terminou!",
+            buttonText = "Continuar",
+            description = "Parabéns! Está tudo pronto para você. " +
+                "Agora, por favor, toque no botão abaixo para iniciar sua jornada CardioFlow!",
             drawableId = drawable.sample_image_alpha1
         )
 
     private val eligibilitySections: List<EligibilityIntroModel.EligibilityCondition> = listOf(
         EligibilityCondition(
-            "Medical eligibility",
-            listOf("Pre-existing condition(s)", "Prescription(s)", "Living in the United States")
+            "Elegibilidade médica",
+            listOf("Condição(s) pré-existente(s)", "Prescrição(s)", "Morando nos Estados Unidos")
         ),
         EligibilityCondition(
-            "Basic Profile",
-            listOf("Age", "Geographical location", "Devices")
+            "Perfil Básico",
+            listOf("Idade", "Localização geográfica", "Dispositivos")
         ),
     )
 
     private val eligibilitySuccessMessage: ImageArticleModel = ImageArticleModel(
         id = "eligibility",
-        title = "Great, You’re in!",
-        description = "Congratulations! You are eligible for the study. " +
-            "Next, we will need to collect your consent, and you will be ready to go.",
+        title = "Ótimo, você está dentro!",
+        description = "Parabéns! Você é elegível para o estudo. " +
+            "Em seguida, precisaremos coletar o seu consentimento, e você estará pronto para começar.",
         drawableId = drawable.sample_image_alpha1
     )
 
     private val eligibilityFailMessage: ImageArticleModel = ImageArticleModel(
         id = "eligibility",
-        title = "You’re not eligible for the study.",
-        description = "Please check back later and stay tuned for more studies coming soon!",
+        title = "Você não é elegível para o estudo.",
+        description = "Por favor, verifique novamente mais tarde e fique atento para mais estudos em breve!",
         drawableId = drawable.sample_image_alpha1
     )
 
     private val eligibilityQuestions: List<QuestionModel<Any>> = listOf(
         ChoiceQuestionModel(
             "age",
-            "What's your age?",
+            "Qual é a sua idade?",
             candidates = (20..50).toList(),
             viewType = Dropdown
         ),
         ChoiceQuestionModel(
             "gender",
-            "What's your gender?",
-            candidates = listOf("Male", "Female"),
+            "Qual é o seu gênero?",
+            candidates = listOf("Masculino", "Feminino"),
         ),
         ChoiceQuestionModel(
             "hasCardiac",
-            "Do you have any existing cardiac conditions?",
-            "Examples of cardiac conditions include abnormal heart rhythms, or arrhythmias",
-            candidates = listOf("Yes", "No"),
-            answer = "Yes"
+            "Você tem alguma condição cardíaca existente?",
+            "Exemplos de condições cardíacas incluem batimentos cardíacos anormais ou arritmias.",
+            candidates = listOf("Sim", "Não"),
+            answer = "Sim"
         ),
         ChoiceQuestionModel(
             "hasWearableDevice",
-            "Do you currently own a wearable device?",
-            "Examples of wearable devices include Samsung Galaxy Watch 4, Fitbit, OuraRing, etc.",
-            candidates = listOf("Yes", "No"),
-            answer = "Yes"
+            "Você possui atualmente um dispositivo wearable?",
+            "Exemplos de dispositivos wearable incluem Samsung Galaxy Watch 4, Fitbit, OuraRing, etc.",
+            candidates = listOf("Sim", "Não"),
+            answer = "Sim"
         )
     ) as List<QuestionModel<Any>>
 }

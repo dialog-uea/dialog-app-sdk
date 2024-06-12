@@ -32,7 +32,7 @@ class StudyInfoView(
 
         Scaffold(
             topBar = {
-                TopBar("Study Information") {
+                TopBar("Informação do estudo") {
                     onClickBack()
                 }
             }
@@ -44,8 +44,8 @@ class StudyInfoView(
                     .verticalScroll(scrollState),
             ) {
                 PlainText(
-                    "Study Contacts",
-                    "For general queries, email"
+                    "Contatos do estudo",
+                    "Para dúvidas gerais, envie um e-mail"
                 ) {
                     Column {
                         val contacts: Array<String> =
@@ -74,35 +74,35 @@ class StudyInfoView(
                 Spacer(Modifier.height(54.dp))
 
                 PlainText(
-                    "Study Explanation",
+                    "Explicação do estudo",
                     resources.getString(R.string.study_explanation),
                 )
 
                 Spacer(Modifier.height(54.dp))
 
                 PlainText(
-                    "Reward Information",
+                    "Informação de compensação",
                     resources.getString(R.string.reward_information),
                 )
 
                 Spacer(Modifier.height(54.dp))
 
                 HyperLinkText(
-                    "User Agreement",
+                    "Acordo de usuário",
                     resources.getString(R.string.user_agreement_url),
                 )
 
                 Spacer(Modifier.height(16.dp))
 
                 HyperLinkText(
-                    "Privacy Policy",
+                    "Política de Privacidade",
                     resources.getString(R.string.privacy_polity_url),
                 )
 
                 Spacer(Modifier.height(16.dp))
 
                 HyperLinkText(
-                    "Licenses",
+                    "Licenças",
                     resources.getString(R.string.privacy_polity_url),
                 )
             }

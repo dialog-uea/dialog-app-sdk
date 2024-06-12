@@ -100,7 +100,7 @@ class VideoPublication(
 
         Scaffold(
             topBar = {
-                TopBar("Education") {
+                TopBar("Educação") {
                     onClick(null)
                 }
             }
