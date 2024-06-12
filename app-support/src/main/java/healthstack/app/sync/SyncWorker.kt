@@ -3,7 +3,7 @@ package healthstack.app.sync
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
-import android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION
+import android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
@@ -106,7 +106,7 @@ class SyncWorker constructor(
             .setOngoing(true)
             .build()
 
-        return ForegroundInfo(Random.nextInt(), notificationBuilder, FOREGROUND_SERVICE_TYPE_LOCATION)
+        return ForegroundInfo(Random.nextInt(), notificationBuilder, FOREGROUND_SERVICE_TYPE_DATA_SYNC)
     }
 
     /**
