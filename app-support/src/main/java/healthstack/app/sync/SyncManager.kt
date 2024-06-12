@@ -3,9 +3,9 @@ package healthstack.app.sync
 import android.content.Context
 import androidx.work.Constraints
 import androidx.work.Data
-import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.ExistingWorkPolicy
 import androidx.work.NetworkType
-import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import healthstack.app.sync.SyncManager.HealthDataSyncSpec
 import healthstack.kit.annotation.ForVerificationGenerated
@@ -76,9 +76,7 @@ class SyncManager private constructor(
      */
     fun startBackgroundSync() {
         syncSpecs.forEach {
-            val workRequest = PeriodicWorkRequestBuilder<SyncWorker>(
-                it.syncInterval, it.syncTimeUnit,
-            )
+            val workRequest = OneTimeWorkRequestBuilder<SyncWorker>()
                 .setConstraints(constraints)
                 .setInputData(
                     createInputData(
@@ -89,9 +87,9 @@ class SyncManager private constructor(
                 )
                 .build()
 
-            workManager.enqueueUniquePeriodicWork(
+            workManager.enqueueUniqueWork(
                 it.healthDataTypeString,
-                ExistingPeriodicWorkPolicy.KEEP,
+                ExistingWorkPolicy.KEEP,
                 workRequest
             )
         }
