@@ -21,11 +21,14 @@ class ResearchApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        val healthDataRequired = listOf("HeartRate", "SleepSession")
+        val healthDataRequired = listOf("HeartRate", "SleepSession", "Steps", "OxygenSaturation")
 
         val healthDataSyncSpecs = listOf(
             SyncManager.HealthDataSyncSpec("HeartRate", 15, TimeUnit.MINUTES),
-        )
+            SyncManager.HealthDataSyncSpec("SleepSession", 15, TimeUnit.MINUTES),
+            SyncManager.HealthDataSyncSpec("Steps", 15, TimeUnit.MINUTES),
+            SyncManager.HealthDataSyncSpec("OxygenSaturation", 15, TimeUnit.MINUTES),
+            )
 
         HealthDataLinkHolder.initialize(
             HealthConnectAdapter(
