@@ -26,6 +26,7 @@ import java.util.Locale
 
 @Composable
 fun WeeklyCard(
+
     targetDay: LocalDate,
     modifier: Modifier = Modifier
         .fillMaxWidth()
@@ -83,7 +84,7 @@ private fun DayCard(date: LocalDate, textColor: Color, modifier: Modifier, selec
     ) {
         Spacer(modifier = Modifier.height(5.dp))
         Text(
-            date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.ENGLISH),
+            date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale("pt","BR")),
             style = AppTheme.typography.caption,
             modifier = Modifier.height(16.dp),
             color = textColor
